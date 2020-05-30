@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">TakeOut</string>
+    <string name="sy">首页</string>
+    <string name="dd">订单</string>
+    <string name="gr">个人</string>
+    <string name="gd">更多</string>
+    <string name="shgjy">沙河高教园</string>
+    <string name="srsjsjmc">输入商家、商家名称</string>
+    <string name="djdzz">---------大家都在找---------</string>
+    <string name="mdl">麦当劳</string>
+    <string name="kdj">肯德基</string>
+    <string name="z">粥</string>
+    <string name="pp">品牌</string>
+    <string name="kdjzjswhld">肯德基宅急送（文化路店）</string>
+    <string name="p">票</string>
+    <string name="ysd">月售243单</string>
+    <string name="qspsf">Y0起送/配送费Y19</string>
+    <string name="mfz">556米/33分钟</string>
+    <string name="j">减</string>
+    <string name="zxzfmjymj">在线支付满49减10元，满89减16</string>
+    <string name="zeng">赠</string>
+    <string name="myzjzgzyl">满45元赠九增果汁饮料</string>
+    <string name="fjsj">附近商家</string>
+    <string name="twoeight">2.8</string>
+    <string name="one">1</string>
+    <string name="jsd">即时达</string>
+    <string name="xhdg">鲜花蛋糕</string>
+</resources>
