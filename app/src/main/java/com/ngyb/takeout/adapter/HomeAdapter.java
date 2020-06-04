@@ -165,6 +165,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
             //结果中包含三个对象，3个对象中既有图片描述，图片的链接地址
             List<PromotionListBean> promotionList = homeInfoBean.getHead().getPromotionList();
             for (int i = 0; i < promotionList.size(); i++) {
+                LogUtils.doLog(TAG,Constant.BASEURL + promotionList.get(i).getPic());
                 TextSliderView textSliderView = new TextSliderView(context);
                 textSliderView.description(promotionList.get(i).getInfo())//描述文本
                         .image(Constant.BASEURL + promotionList.get(i).getPic())//展示图片内容
