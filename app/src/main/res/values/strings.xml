@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TakeOut</string>
+    <string name="app_name">南宫燚滨外卖</string>
     <string name="sy">首页</string>
     <string name="dd">订单</string>
     <string name="gr">个人</string>
@@ -25,4 +25,7 @@
     <string name="one">1</string>
     <string name="jsd">即时达</string>
     <string name="xhdg">鲜花蛋糕</string>
+    <string name="qjs">去结算</string>
+    <string name="gwc">购物车</string>
+    <string name="qk">清空</string>
 </resources>

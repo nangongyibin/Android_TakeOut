@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/dp_80"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:background="@color/c_b9dedcdc"
+    android:clickable="true"
+    android:focusable="true"
+    android:minHeight="@dimen/dp_80"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/tvCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="right"
+        android:layout_marginTop="@dimen/dp_5"
+        android:layout_marginEnd="@dimen/dp_5"
+        android:layout_marginRight="@dimen/dp_5"
+        android:background="@drawable/circle_red"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/c_fff"
+        android:textSize="@dimen/sp_12"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/type"
+        android:layout_width="@dimen/dp_80"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:padding="@dimen/dp_5"
+        android:text="种类1" />
+</RelativeLayout>

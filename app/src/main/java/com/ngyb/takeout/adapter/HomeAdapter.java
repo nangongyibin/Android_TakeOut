@@ -17,6 +17,7 @@ import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.ngyb.takeout.R;
+import com.ngyb.takeout.activity.BusinessActivity;
 import com.ngyb.takeout.bean.net.CategorieListBean;
 import com.ngyb.takeout.bean.net.HomeInfoBean;
 import com.ngyb.takeout.bean.net.PromotionListBean;
@@ -286,13 +287,14 @@ public class HomeAdapter extends RecyclerView.Adapter {
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    //position点钟条目索引位置 TODO
+                    //position点钟条目索引位置
                     //通过索引从服务器返回的商品列表集合中，找到指定的商家，让后一个页面加载此商家的数据
-//                    SellerBean seller = homeInfoBean.getBody().get(position).getSeller();
-//                    //此seller会作为区分不同商家对象
-//                    Intent intent = new Intent(context, BusinessActivity.class);
-//                    intent.putExtra("seller", seller);
-//                    context.startActivity(intent);
+                    LogUtils.doLog(TAG,position+"");
+                    SellerBean seller = homeInfoBean.getBody().get(position).getSeller();
+                    //此seller会作为区分不同商家对象
+                    Intent intent = new Intent(context, BusinessActivity.class);
+                    intent.putExtra(Constant.KEY, seller);
+                    context.startActivity(intent);
 
                 }
             });

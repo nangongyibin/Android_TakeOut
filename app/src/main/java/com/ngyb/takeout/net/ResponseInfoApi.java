@@ -15,4 +15,7 @@ import retrofit2.http.Query;
 public interface ResponseInfoApi {
     @GET("HomeServlet/home")
     Call<ResponseInfoBean> getHomeInfo();
+
+    @GET("BusinessServlet/business")
+    Call<ResponseInfoBean> getGoodsInfo(@Query("sellerId") long sellerId);
 }

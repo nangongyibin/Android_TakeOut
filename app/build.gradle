@@ -21,6 +21,7 @@ android {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
@@ -44,4 +45,8 @@ dependencies {
     //兼容低版本动画jar包
     implementation 'com.nineoldandroids:library:2.4.0'
     implementation 'com.android.support:design:28.0.0'
+    //底部弹出窗体
+    implementation 'com.flipboard:bottomsheet-commons:1.5.1'
+    implementation 'com.flipboard:bottomsheet-core:1.5.1'
+    implementation 'se.emilsjolander:stickylistheaders:2.7.0'
 }

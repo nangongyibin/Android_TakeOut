@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fl_Container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <com.flipboard.bottomsheet.BottomSheetLayout
+            android:id="@+id/bottomSheetLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fitsSystemWindows="false"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/c_f6f89191"
+                    android:orientation="horizontal"
+                    android:paddingTop="@dimen/dp_25"
+                    android:paddingBottom="@dimen/dp_10">
+
+                    <ImageButton
+                        android:id="@+id/ib_back"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginStart="@dimen/dp_10"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:background="@mipmap/abc_ic_ab_back_mtrl_am_alpha" />
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:text="田老师红烧肉（东北旺西路店）"
+                        android:textColor="@color/c_fff"
+                        android:textSize="@dimen/sp_20"
+                        android:textStyle="bold" />
+
+                    <ImageButton
+                        android:id="@+id/ib_menu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginEnd="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@mipmap/abc_ic_menu_moreoverflow_mtrl_alpha" />
+                </LinearLayout>
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tabs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="@color/c_00f"
+                    app:tabIndicatorHeight="@dimen/dp_4"
+                    app:tabSelectedTextColor="@color/c_00f"
+                    app:tabTextColor="@color/c_000" />
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </com.flipboard.bottomsheet.BottomSheetLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_50"
+            android:background="@color/c_aa000000"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:onClick="onClick"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:layout_width="@dimen/dp_50"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/imgCart"
+                    android:layout_width="@dimen/dp_32"
+                    android:layout_height="@dimen/dp_32"
+                    android:layout_centerInParent="true"
+                    android:src="@mipmap/icon_cart" />
+
+                <TextView
+                    android:id="@+id/tvSelectNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="@dimen/dp_5"
+                    android:layout_marginEnd="@dimen/dp_5"
+                    android:layout_marginRight="@dimen/dp_5"
+                    android:background="@drawable/circle_red"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/c_fff"
+                    android:textSize="@dimen/sp_12"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/tvCountPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_2"
+                android:layout_marginLeft="@dimen/dp_2"
+                android:gravity="center_vertical"
+                android:text="Y0"
+                android:textColor="@color/c_fff"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tvDeliveryFee"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dp_5"
+                android:layout_marginRight="@dimen/dp_5"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="另需配送费Y4"
+                android:textColor="@color/c_fff"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/TvSendPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_marginRight="@dimen/dp_10"
+                android:gravity="center"
+                android:text="Y100元起送"
+                android:textColor="@color/c_fff"
+                android:textSize="@dimen/sp_14" />
+
+            <TextView
+                android:id="@+id/tvSumbit"
+                android:layout_width="@dimen/dp_90"
+                android:layout_height="match_parent"
+                android:background="@color/c_22c222"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:text="@string/qjs"
+                android:textColor="@color/c_fff"
+                android:textSize="@dimen/sp_18"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
