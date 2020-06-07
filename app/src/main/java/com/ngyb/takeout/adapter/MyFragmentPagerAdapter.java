@@ -7,7 +7,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.ngyb.mvpbase.BaseFragment;
-import com.ngyb.takeout.bean.net.SellerBean;
+import com.ngyb.takeout.fragment.SellerFragment;
+import com.ngyb.takeout.fragment.SuggestFragment;
+import com.ngyb.takeout.net.bean.SellerBean;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.takeout.fragment.GoodsFragment;
 import com.ngyb.takeout.fragment.HomeFragment;
@@ -41,14 +43,10 @@ public class MyFragmentPagerAdapter extends FragmentPagerAdapter {
                 baseFragment = new GoodsFragment();
                 break;
             case 1:
-                //TODO
-                baseFragment = new HomeFragment();
-//                baseFragment = new SuggestFragment();
+                baseFragment = new SuggestFragment();
                 break;
             case 2:
-                //TODO
-                baseFragment = new HomeFragment();
-//                baseFragment = new SellerFragment();
+                baseFragment = new SellerFragment();
                 break;
         }
         //seller需要存储在bundle进行传递

@@ -12,6 +12,7 @@ import android.util.Log;
 public class MyApplication extends Application {
     private static final String TAG = "MyApplication";
     public static int statusBarHeight = 0;
+    public static int userId = -1;//目前没有用户登录的
 
     @Override
     public void onCreate() {

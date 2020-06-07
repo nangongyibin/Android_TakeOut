@@ -18,15 +18,14 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.ngyb.takeout.R;
 import com.ngyb.takeout.activity.BusinessActivity;
-import com.ngyb.takeout.bean.net.CategorieListBean;
-import com.ngyb.takeout.bean.net.HomeInfoBean;
-import com.ngyb.takeout.bean.net.PromotionListBean;
-import com.ngyb.takeout.bean.net.SellerBean;
+import com.ngyb.takeout.net.bean.CategorieListBean;
+import com.ngyb.takeout.net.bean.HomeInfoBean;
+import com.ngyb.takeout.net.bean.PromotionListBean;
+import com.ngyb.takeout.net.bean.SellerBean;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.utils.LogUtils;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

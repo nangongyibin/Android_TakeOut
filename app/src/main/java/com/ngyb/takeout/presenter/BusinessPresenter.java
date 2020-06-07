@@ -6,8 +6,8 @@ import com.ngyb.mvpbase.BasePresenter;
 import com.ngyb.takeout.activity.BusinessActivity;
 import com.ngyb.takeout.adapter.GoodsAdapter;
 import com.ngyb.takeout.adapter.GoodsTypeAdapter;
-import com.ngyb.takeout.bean.net.GoodsInfoBean;
-import com.ngyb.takeout.bean.net.GoodsTypeInfoBean;
+import com.ngyb.takeout.net.bean.GoodsInfoBean;
+import com.ngyb.takeout.net.bean.GoodsTypeInfoBean;
 import com.ngyb.takeout.contract.BusinessContract;
 import com.ngyb.takeout.fragment.GoodsFragment;
 

@@ -1,4 +1,4 @@
-package com.ngyb.takeout.bean.net;
+package com.ngyb.takeout.net.bean;
 
 /**
  * 作者：南宫燚滨
@@ -6,15 +6,15 @@ package com.ngyb.takeout.bean.net;
  * 邮箱：nangongyibin@gmail.com
  * 日期：2020/5/15 09:40
  */
-public class CategorieListBean {
+public class PromotionListBean {
     /**
      * id : 1
-     * name : 美食
-     * pic : /imgs/category/1.png
+     * info : promotion info...
+     * pic : /imgs/promotion/1.jpg
      */
 
     private int id;
-    private String name;
+    private String info;
     private String pic;
 
     public int getId() {
@@ -25,12 +25,12 @@ public class CategorieListBean {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getInfo() {
+        return info;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setInfo(String info) {
+        this.info = info;
     }
 
     public String getPic() {

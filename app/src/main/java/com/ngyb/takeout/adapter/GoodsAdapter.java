@@ -19,7 +19,7 @@ import android.widget.TextView;
 import com.ngyb.takeout.R;
 import com.ngyb.takeout.activity.BusinessActivity;
 import com.ngyb.takeout.app.MyApplication;
-import com.ngyb.takeout.bean.net.GoodsInfoBean;
+import com.ngyb.takeout.net.bean.GoodsInfoBean;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.takeout.fragment.GoodsFragment;
 import com.ngyb.takeout.utils.CountPriceFormater;

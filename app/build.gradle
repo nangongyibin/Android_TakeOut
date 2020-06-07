@@ -27,7 +27,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //mvp
-    implementation 'com.github.nangongyibin:Android_MVPBase:1.0.7'
+    implementation 'com.github.nangongyibin:Android_MVPBase:1.0.8'
     //AutoDispose解决RxJava内存泄漏
     implementation 'com.uber.autodispose:autodispose:0.7.0'
     implementation 'com.uber.autodispose:autodispose-android:0.7.0'
@@ -48,5 +48,8 @@ dependencies {
     //底部弹出窗体
     implementation 'com.flipboard:bottomsheet-commons:1.5.1'
     implementation 'com.flipboard:bottomsheet-core:1.5.1'
+    //多标联动
     implementation 'se.emilsjolander:stickylistheaders:2.7.0'
+    //使用如下jar包可以通过方法替换相关的sql语句编写
+    implementation 'com.j256.ormlite:ormlite-android:5.0'
 }

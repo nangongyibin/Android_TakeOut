@@ -4,7 +4,7 @@ import android.util.Log;
 
 import com.ngyb.mvpbase.BasePresenter;
 import com.ngyb.mvpbase.BaseView;
-import com.ngyb.takeout.bean.net.ResponseInfoBean;
+import com.ngyb.takeout.net.bean.ResponseInfoBean;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.takeout.net.ResponseInfoApi;
 

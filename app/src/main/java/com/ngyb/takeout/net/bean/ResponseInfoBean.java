@@ -1,4 +1,4 @@
-package com.ngyb.takeout.bean.net;
+package com.ngyb.takeout.net.bean;
 
 /**
  * 作者：南宫燚滨

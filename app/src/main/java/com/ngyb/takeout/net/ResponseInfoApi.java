@@ -1,6 +1,6 @@
 package com.ngyb.takeout.net;
 
-import com.ngyb.takeout.bean.net.ResponseInfoBean;
+import com.ngyb.takeout.net.bean.ResponseInfoBean;
 
 import retrofit2.Call;
 import retrofit2.http.GET;

@@ -1,11 +1,9 @@
 package com.ngyb.takeout.presenter;
 
-import android.util.Log;
-
 import com.google.gson.Gson;
 import com.ngyb.takeout.adapter.HomeAdapter;
-import com.ngyb.takeout.bean.net.HomeInfoBean;
-import com.ngyb.takeout.bean.net.ResponseInfoBean;
+import com.ngyb.takeout.net.bean.HomeInfoBean;
+import com.ngyb.takeout.net.bean.ResponseInfoBean;
 import com.ngyb.takeout.contract.HomeFContract;
 import com.ngyb.utils.LogUtils;
 

@@ -1,14 +1,13 @@
 package com.ngyb.takeout.presenter;
 
 import com.google.gson.Gson;
-import com.ngyb.mvpbase.BasePresenter;
 import com.ngyb.takeout.adapter.GoodsAdapter;
 import com.ngyb.takeout.adapter.GoodsTypeAdapter;
-import com.ngyb.takeout.bean.net.BusinessInfoBean;
-import com.ngyb.takeout.bean.net.GoodsInfoBean;
-import com.ngyb.takeout.bean.net.GoodsTypeInfoBean;
-import com.ngyb.takeout.bean.net.ResponseInfoBean;
-import com.ngyb.takeout.bean.net.SellerBean;
+import com.ngyb.takeout.net.bean.BusinessInfoBean;
+import com.ngyb.takeout.net.bean.GoodsInfoBean;
+import com.ngyb.takeout.net.bean.GoodsTypeInfoBean;
+import com.ngyb.takeout.net.bean.ResponseInfoBean;
+import com.ngyb.takeout.net.bean.SellerBean;
 import com.ngyb.takeout.contract.GoodsFContract;
 import com.ngyb.utils.LogUtils;
 

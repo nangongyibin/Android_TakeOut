@@ -9,13 +9,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ngyb.takeout.R;
-import com.ngyb.takeout.bean.net.GoodsTypeInfoBean;
+import com.ngyb.takeout.net.bean.GoodsTypeInfoBean;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.takeout.fragment.GoodsFragment;
 
 import java.util.List;
-
-import retrofit2.http.POST;
 
 /**
  * 作者：南宫燚滨

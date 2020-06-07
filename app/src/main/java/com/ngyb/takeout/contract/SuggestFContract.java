@@ -1,17 +1,14 @@
 package com.ngyb.takeout.contract;
 
 import com.ngyb.mvpbase.BaseView;
-import com.ngyb.takeout.net.bean.GoodsInfoBean;
-
-import java.util.ArrayList;
 
 /**
  * 作者：南宫燚滨
  * 描述：
  * 邮箱：nangongyibin@gmail.com
- * 日期：2020/6/4 22:10
+ * 日期：2020/6/7 18:04
  */
-public interface BusinessContract {
+public interface SuggestFContract {
     interface Model {
     }
 
@@ -19,10 +16,5 @@ public interface BusinessContract {
     }
 
     interface Presenter {
-        void getShopCartCountAndPrice();
-
-        ArrayList<GoodsInfoBean> getShopCartList();
-
-        void clearAll();
     }
 }

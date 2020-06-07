@@ -1,6 +1,8 @@
-package com.ngyb.takeout.bean.net;
+package com.ngyb.takeout.net.bean;
 
 import com.google.gson.annotations.SerializedName;
+
+import java.io.Serializable;
 
 /**
  * 作者：南宫燚滨
@@ -8,7 +10,7 @@ import com.google.gson.annotations.SerializedName;
  * 邮箱：nangongyibin@gmail.com
  * 日期：2020/6/6 12:26
  */
-public class GoodsInfoBean {
+public class GoodsInfoBean implements Serializable {
     /**
      * bargainPrice : true
      * form : 肉末烧汁茄子+千叶豆腐+小食+时蔬+含粗粮米饭)

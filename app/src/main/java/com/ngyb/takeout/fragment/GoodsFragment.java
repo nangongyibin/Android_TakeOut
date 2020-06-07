@@ -1,21 +1,18 @@
 package com.ngyb.takeout.fragment;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AbsListView;
 
 import com.ngyb.mvpbase.BaseMvpFragment;
 import com.ngyb.takeout.R;
 import com.ngyb.takeout.adapter.GoodsAdapter;
 import com.ngyb.takeout.adapter.GoodsTypeAdapter;
-import com.ngyb.takeout.bean.net.GoodsInfoBean;
-import com.ngyb.takeout.bean.net.GoodsTypeInfoBean;
-import com.ngyb.takeout.bean.net.SellerBean;
+import com.ngyb.takeout.net.bean.GoodsInfoBean;
+import com.ngyb.takeout.net.bean.GoodsTypeInfoBean;
+import com.ngyb.takeout.net.bean.SellerBean;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.takeout.contract.GoodsFContract;
 import com.ngyb.takeout.presenter.GoodsFPresenter;

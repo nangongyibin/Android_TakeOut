@@ -19,15 +19,15 @@ import com.ngyb.mvpbase.BaseMvpActivity;
 import com.ngyb.takeout.R;
 import com.ngyb.takeout.adapter.MyFragmentPagerAdapter;
 import com.ngyb.takeout.adapter.ShopCartAdapter;
-import com.ngyb.takeout.bean.net.GoodsInfoBean;
-import com.ngyb.takeout.bean.net.SellerBean;
+import com.ngyb.takeout.net.bean.GoodsInfoBean;
+import com.ngyb.takeout.net.bean.SellerBean;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.takeout.contract.BusinessContract;
 import com.ngyb.takeout.presenter.BusinessPresenter;
 import com.ngyb.takeout.utils.CountPriceFormater;
 import com.ngyb.utils.LogUtils;
 
-import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -151,13 +151,13 @@ public class BusinessActivity extends BaseMvpActivity<BusinessPresenter> impleme
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.tvSumbit:
-//                Intent intent = new Intent(this, ConfirmOrderActivity.class);
-//                ArrayList<GoodsInfoBean> shopCartList = businessPresenter.getShopCartList();
-//                //购买商品的集合
-//                intent.putExtra("shopcartList", shopCartList);
-//                //运费数量
-//                intent.putExtra("deliverFee", floatDeliveryFee);
-//                startActivity(intent);
+                Intent intent = new Intent(this, ConfirmOrderActivity.class);
+                ArrayList<GoodsInfoBean> shopCartList = businessPresenter.getShopCartList();
+                //购买商品的集合
+                intent.putExtra(Constant.SHOPCARTLIST, shopCartList);
+                //运费数量
+                intent.putExtra(Constant.DELIVERFEE, floatDeliveryFee);
+                startActivity(intent);
                 break;
             case R.id.bottom:
                 if (sheetView == null) {

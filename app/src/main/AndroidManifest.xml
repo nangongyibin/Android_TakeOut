@@ -21,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.BusinessActivity" />
+        <activity android:name=".activity.ConfirmOrderActivity" />
     </application>
 
 </manifest>

@@ -10,6 +10,7 @@ import com.ngyb.mvpbase.BaseMvpActivity;
 import com.ngyb.takeout.R;
 import com.ngyb.takeout.contract.MainContract;
 import com.ngyb.takeout.fragment.HomeFragment;
+import com.ngyb.takeout.fragment.MoreFragment;
 import com.ngyb.takeout.presenter.MainPresenter;
 
 import java.util.ArrayList;
@@ -55,10 +56,9 @@ public class MainActivity extends BaseMvpActivity<MainPresenter> implements Main
         fragmentList.add(new HomeFragment());
         fragmentList.add(new HomeFragment());
         fragmentList.add(new HomeFragment());
-        fragmentList.add(new HomeFragment());
 //        fragmentList.add(new OrderFragment());
 //        fragmentList.add(new UserFragment());
-//        fragmentList.add(new MoreFragment());
+        fragmentList.add(new MoreFragment());
     }
 
     private void initView() {

@@ -1,6 +1,4 @@
-package com.ngyb.takeout.bean.net;
-
-import com.google.gson.annotations.SerializedName;
+package com.ngyb.takeout.net.bean;
 
 import java.util.List;
 
