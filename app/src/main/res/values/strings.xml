@@ -28,4 +28,17 @@
     <string name="qjs">去结算</string>
     <string name="gwc">购物车</string>
     <string name="qk">清空</string>
+    <string name="xzdz">新增地址</string>
+    <string name="lxr">联系人</string>
+    <string name="ndxm">你的姓名</string>
+    <string name="xs">先生</string>
+    <string name="ns">女士</string>
+    <string name="lxdh">联系电话</string>
+    <string name="ndsjh">你的手机号</string>
+    <string name="bxdh">备选电话</string>
+    <string name="shdz">收货地址</string>
+    <string name="xqxzlxx">小区/写字楼/学校</string>
+    <string name="xxdzrmphd">详细地址（如门牌号等）</string>
+    <string name="bq">标签</string>
+    <string name="qd">确定</string>
 </resources>

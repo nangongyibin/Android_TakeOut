@@ -3,6 +3,8 @@ package com.ngyb.takeout.dao.bean;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
 
+import java.io.Serializable;
+
 /**
  * 作者：南宫燚滨
  * 描述：
@@ -10,7 +12,7 @@ import com.j256.ormlite.table.DatabaseTable;
  * 日期：2020/6/7 15:39
  */
 @DatabaseTable(tableName = "t_receipt_address")
-public class ReceiptAddressBean {
+public class ReceiptAddressBean implements Serializable {
     @DatabaseField(generatedId = true)
     private int _id;
     @DatabaseField(columnName = "uid")

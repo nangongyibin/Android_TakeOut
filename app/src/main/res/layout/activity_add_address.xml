@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_f5f6f6f9"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:background="@color/c_468ade"
+        android:paddingTop="@dimen/dp_30"
+        android:paddingBottom="@dimen/dp_15">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@mipmap/abc_ic_ab_back_mtrl_am_alpha" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/dp_20"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:layout_toEndOf="@id/ib_back"
+            android:layout_toRightOf="@id/ib_back"
+            android:text="@string/xzdz"
+            android:textColor="@color/c_fff"
+            android:textSize="@dimen/sp_20" />
+
+        <ImageButton
+            android:id="@+id/ib_delete"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@mipmap/address_icon_delete" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_3"
+        android:background="@color/c_fff">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/lxr"
+            android:textColor="@color/c_000"
+            android:textSize="@dimen/sp_12" />
+
+        <EditText
+            android:id="@+id/et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/tv_name"
+            android:layout_toRightOf="@id/tv_name"
+            android:background="@null"
+            android:hint="@string/ndxm"
+            android:maxLines="1"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/c_fff">
+
+        <RadioGroup
+            android:id="@+id/rg_sex"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_90"
+            android:layout_marginLeft="@dimen/dp_90"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_man"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/xs"
+                android:textSize="@dimen/sp_14" />
+
+            <RadioButton
+                android:id="@+id/rb_women"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dp_30"
+                android:layout_marginLeft="@dimen/dp_30"
+                android:text="@string/ns"
+                android:textSize="@dimen/sp_14" />
+        </RadioGroup>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/c_fff">
+
+        <TextView
+            android:id="@+id/tv_phone"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/lxdh"
+            android:textColor="@color/c_000"
+            android:textSize="@dimen/sp_12" />
+
+        <EditText
+            android:id="@+id/et_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_90"
+            android:layout_marginLeft="@dimen/dp_90"
+            android:layout_toStartOf="@id/ib_delete_phone"
+            android:layout_toLeftOf="@id/ib_delete_phone"
+            android:background="@null"
+            android:hint="@string/ndsjh"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageButton
+            android:id="@+id/ib_delete_phone"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_toStartOf="@id/ib_add_phone_other"
+            android:layout_toLeftOf="@id/ib_add_phone_other"
+            android:background="@mipmap/icon_close"
+            android:visibility="invisible" />
+
+        <ImageButton
+            android:id="@+id/ib_add_phone_other"
+            android:layout_width="@dimen/dp_15"
+            android:layout_height="@dimen/dp_15"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@mipmap/address_icon_reserve" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_phone_other"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/c_fff"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/et_phone_other"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_90"
+            android:layout_marginLeft="@dimen/dp_90"
+            android:layout_toStartOf="@id/ib_delete_phone_other"
+            android:layout_toLeftOf="@id/ib_delete_phone_other"
+            android:background="@null"
+            android:hint="@string/bxdh"
+            android:inputType="phone"
+            android:maxLines="1"
+            android:textSize="@dimen/sp_14" />
+
+        <ImageButton
+            android:id="@+id/ib_delete_phone_other"
+            android:layout_width="@dimen/dp_10"
+            android:layout_height="@dimen/dp_10"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:background="@mipmap/icon_close"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/c_fff"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/shdz"
+            android:textColor="@color/c_000"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_receipt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_90"
+            android:layout_marginLeft="@dimen/dp_90"
+            android:background="@null"
+            android:hint="@string/xqxzlxx"
+            android:maxLines="2"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/c_fff"
+        android:visibility="visible">
+
+        <EditText
+            android:id="@+id/et_detail_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_90"
+            android:layout_marginLeft="@dimen/dp_90"
+            android:background="@null"
+            android:hint="@string/xxdzrmphd"
+            android:maxLines="2"
+            android:textSize="@dimen/sp_14" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_1"
+        android:background="@color/c_fff"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="@dimen/dp_80"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:text="@string/bq"
+            android:textColor="@color/c_000"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            android:id="@+id/tv_label"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@id/ib_select_label"
+            android:layout_toLeftOf="@id/ib_select_label"
+            android:background="@color/c_fff"
+            android:gravity="center"
+            android:maxLines="1"
+            android:padding="@dimen/dp_3"
+            android:text=""
+            android:textColor="@color/c_fff"
+            android:textSize="@dimen/sp_10" />
+
+        <ImageView
+            android:id="@+id/ib_select_label"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="@dimen/dp_5"
+            android:layout_marginRight="@dimen/dp_5"
+            android:src="@mipmap/address_icon_down" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/bt_ok"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40"
+        android:layout_margin="@dimen/dp_10"
+        android:background="@color/c_02c14b"
+        android:text="@string/qd"
+        android:textColor="@color/c_fff" />
+</LinearLayout>

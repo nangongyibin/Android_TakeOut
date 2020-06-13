@@ -166,8 +166,8 @@ public class ConfirmOrderActivity extends BaseMvpActivity<ConfirmOrderPresenter>
                 startActivity(intent);
                 break;
             case R.id.tvSubmit:
-//                Intent intent1 = new Intent(this, PayOnlineActivity.class);
-//                startActivity(intent1);
+                Intent intent1 = new Intent(this, PayOnlineActivity.class);
+                startActivity(intent1);
                 break;
         }
     }
@@ -182,7 +182,7 @@ public class ConfirmOrderActivity extends BaseMvpActivity<ConfirmOrderPresenter>
             tvSex.setText(receiptAddressBean.getSex());
             //有2个号码可以显示
             if (!TextUtils.isEmpty(receiptAddressBean.getPhone()) && !TextUtils.isEmpty(receiptAddressBean.getPhoneOther())) {
-                tvPhone.setText(receiptAddressBean.getPhone()+","+receiptAddressBean.getPhoneOther());
+                tvPhone.setText(receiptAddressBean.getPhone() + "," + receiptAddressBean.getPhoneOther());
             }
             if (!TextUtils.isEmpty(receiptAddressBean.getPhone()) && TextUtils.isEmpty(receiptAddressBean.getPhoneOther())) {
                 tvPhone.setText(receiptAddressBean.getPhone());
@@ -193,7 +193,7 @@ public class ConfirmOrderActivity extends BaseMvpActivity<ConfirmOrderPresenter>
             int index = getIndex(receiptAddressBean.getLabel());
             tvLabel.setBackgroundColor(bgLabels[index]);
             //显示初略地址和详细地址的合并结果
-            tvAddress.setText(receiptAddressBean.getDetailAddress()+receiptAddressBean.getDetailAddress());
+            tvAddress.setText(receiptAddressBean.getDetailAddress() + receiptAddressBean.getDetailAddress());
         }
         super.onResumeNew();
     }

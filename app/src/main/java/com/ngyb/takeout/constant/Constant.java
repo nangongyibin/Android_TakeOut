@@ -20,4 +20,6 @@ public class Constant {
     public static final int DELETE = 1;//1代表有一个减少行为
     public static final String SHOPCARTLIST = "shopcartList";
     public static final String DELIVERFEE = "deliverFee";
+
+    public static final String RECEIPTADDRESS = "receiptAddress";
 }
