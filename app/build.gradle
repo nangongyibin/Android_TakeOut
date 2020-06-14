@@ -52,4 +52,6 @@ dependencies {
     implementation 'se.emilsjolander:stickylistheaders:2.7.0'
     //使用如下jar包可以通过方法替换相关的sql语句编写
     implementation 'com.j256.ormlite:ormlite-android:5.0'
+    // 添加下面的内容  支付宝支付
+    implementation(name: 'alipaySdk-15.7.6-20200521195109', ext: 'aar')
 }

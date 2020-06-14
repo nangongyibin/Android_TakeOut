@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/c_fff"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_70"
+        android:background="@color/c_468ade"
+        android:paddingTop="@dimen/dp_30"
+        android:paddingBottom="@dimen/dp_15">
+
+        <ImageButton
+            android:id="@+id/ib_back"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:background="@mipmap/abc_ic_ab_back_mtrl_am_alpha" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp_20"
+            android:text="在线支付"
+            android:textColor="@color/c_fff"
+            android:textSize="@dimen/sp_20" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_residualTime"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:background="@color/c_f5e7b7"
+        android:gravity="center"
+        android:text="支付剩余时间：14分50秒"
+        android:textColor="@color/c_e26226"
+        android:textSize="@dimen/sp_12" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/c_fd9b9999">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/c_fff"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
+                    android:text="订单名称"
+                    android:textColor="@color/c_000"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_order_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="田老师红烧肉（海淀东北旺西路店）"
+                    android:textColor="@color/c_fd9b9999"
+                    android:textSize="@dimen/sp_13" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/c_fd9b9999" />
+
+            <RelativeLayout
+                android:id="@+id/ll_order_toggle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv"
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
+                    android:text="订单详情"
+                    android:textColor="@color/c_000"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_order_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/iv_triangle"
+                    android:layout_toRightOf="@id/tv"
+                    android:clickable="false"
+                    android:ellipsize="end"
+                    android:focusable="false"
+                    android:maxLines="1"
+                    android:text="南宫燚滨 先生 185****7219 沙河"
+                    android:textColor="@color/c_fd9b9999"
+                    android:textSize="@dimen/sp_13" />
+
+                <ImageView
+                    android:id="@+id/iv_triangle"
+                    android:layout_width="@dimen/dp_10"
+                    android:layout_height="@dimen/dp_10"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:background="@mipmap/grey_triangle_down_icon" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_order_detail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/tv_receipt_connect_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="南宫燚滨 先生 185****7219"
+                    android:textColor="@color/c_fd9b9999"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:id="@+id/tv_Receipt_address_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="沙河高教园"
+                    android:textColor="@color/c_fd9b9999"
+                    android:textSize="@dimen/sp_12" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:text="-"
+                    android:textColor="@color/c_fd9b9999"
+                    android:textSize="@dimen/sp_12" />
+
+                <LinearLayout
+                    android:id="@+id/ll_goods"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/dp_20" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/c_fd9b9999" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="@dimen/dp_100"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/dp_10"
+                    android:text="支付金额"
+                    android:textColor="@color/c_000"
+                    android:textSize="@dimen/sp_15" />
+
+                <TextView
+                    android:id="@+id/tv_pay_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="@dimen/dp_20"
+                    android:text="Y43.00"
+                    android:textColor="@color/c_e26226"
+                    android:textSize="@dimen/sp_15" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_7"
+                android:background="@color/c_fd9b9999" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/dp_20"
+                android:text="选择支付方式"
+                android:textColor="@color/c_fd9b9999"
+                android:textSize="@dimen/sp_12" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/c_fd9b9999" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/iv_pay_alipay"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_centerVertical="true"
+                    android:layout_margin="@dimen/dp_20"
+                    android:background="@mipmap/pay_icon_alipay" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@id/iv_pay_alipay"
+                    android:text="支付宝" />
+
+                <CheckBox
+                    android:id="@+id/cb_pay_alipay"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:button="@drawable/pay_checkbox_selector"
+                    android:checked="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_1"
+                android:background="@color/c_fd9b9999" />
+
+            <LinearLayout
+                android:id="@+id/ll_hint_info"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_10">
+
+                <TextView
+                    android:id="@+id/tv_selector_other_payment"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="查看其它的支付方式"
+                    android:textSize="@dimen/sp_15" />
+
+                <ImageView
+                    android:layout_width="@dimen/dp_7"
+                    android:layout_height="@dimen/dp_7"
+                    android:layout_marginLeft="@dimen/dp_3"
+                    android:background="@mipmap/grey_triangle_down_icon" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_other_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_pay_wechat"
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dp_20"
+                        android:background="@mipmap/pay_icon_wechat" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_pay_wechat"
+                        android:text="微信支付" />
+
+                    <CheckBox
+                        android:id="@+id/cb_pay_wechat"
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:button="@drawable/pay_checkbox_selector" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp_1"
+                    android:background="@color/c_fd9b9999" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_pay_qq"
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dp_20"
+                        android:background="@mipmap/pay_icon_qq" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_pay_qq"
+                        android:text="QQ钱包" />
+
+                    <CheckBox
+                        android:id="@+id/cb_pay_qq"
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:button="@drawable/pay_checkbox_selector" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:id="@+id/iv_pay_fenqile"
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_centerVertical="true"
+                        android:layout_margin="@dimen/dp_20"
+                        android:background="@mipmap/pay_icon_fenqile" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toRightOf="@id/iv_pay_fenqile"
+                        android:text="信用卡钱包支付" />
+
+                    <CheckBox
+                        android:id="@+id/cb_pay_fenqile"
+                        android:layout_width="@dimen/dp_30"
+                        android:layout_height="@dimen/dp_30"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:button="@drawable/pay_checkbox_selector" />
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_confirm_pay"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50"
+        android:background="@color/c_22c222"
+        android:text="确认支付"
+        android:textColor="@color/c_fff" />
+</LinearLayout>

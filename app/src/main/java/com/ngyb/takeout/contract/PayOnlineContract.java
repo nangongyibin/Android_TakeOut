@@ -16,5 +16,6 @@ public interface PayOnlineContract {
     }
 
     interface Presenter {
+        void pay();
     }
 }
