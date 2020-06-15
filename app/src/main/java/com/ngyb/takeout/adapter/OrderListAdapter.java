@@ -47,12 +47,13 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         //2.view放到viewholder里面去
         //3.返回viewholder
         View view = View.inflate(viewGroup.getContext(), R.layout.item_order_item, null);
-        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        view.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
+        Log.e(TAG, "onBindViewHolder: "+i );
         //把viewholder中的控件找出来赋值
         OrderBean orderBean = data.get(i);
         //设置商家名称
