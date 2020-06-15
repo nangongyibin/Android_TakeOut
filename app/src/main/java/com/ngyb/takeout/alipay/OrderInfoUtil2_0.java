@@ -1,4 +1,4 @@
-package com.ngyb.takeout.utils;
+package com.ngyb.takeout.alipay;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;

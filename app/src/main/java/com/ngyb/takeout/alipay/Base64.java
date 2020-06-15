@@ -1,4 +1,4 @@
-package com.ngyb.takeout.utils;
+package com.ngyb.takeout.alipay;
 
 public final class Base64 {
 

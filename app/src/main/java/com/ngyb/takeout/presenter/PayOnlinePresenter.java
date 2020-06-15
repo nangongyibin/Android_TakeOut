@@ -11,9 +11,8 @@ import com.ngyb.mvpbase.BasePresenter;
 import com.ngyb.takeout.activity.PayOnlineActivity;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.takeout.contract.PayOnlineContract;
-import com.ngyb.takeout.utils.OrderInfoUtil2_0;
-import com.ngyb.takeout.utils.PayResult;
-import com.ngyb.takeout.utils.SignUtils;
+import com.ngyb.takeout.alipay.OrderInfoUtil2_0;
+import com.ngyb.takeout.alipay.PayResult;
 
 import java.util.Map;
 

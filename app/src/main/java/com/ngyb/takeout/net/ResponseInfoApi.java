@@ -18,4 +18,7 @@ public interface ResponseInfoApi {
 
     @GET("BusinessServlet/business")
     Call<ResponseInfoBean> getGoodsInfo(@Query("sellerId") long sellerId);
+
+    @GET("OrderServlet/order")
+    Call<ResponseInfoBean> getOrderInfo(@Query("userId") int userId);
 }
