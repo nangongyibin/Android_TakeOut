@@ -7,8 +7,9 @@ android {
         minSdkVersion 15
         targetSdkVersion 28
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
         release {
@@ -19,7 +20,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
@@ -27,7 +28,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //mvp
-    implementation 'com.github.nangongyibin:Android_MVPBase:1.0.8'
+    implementation 'com.github.nangongyibin:Android_MVPBase:1.1.0'
     //AutoDispose解决RxJava内存泄漏
     implementation 'com.uber.autodispose:autodispose:0.7.0'
     implementation 'com.uber.autodispose:autodispose-android:0.7.0'
@@ -54,4 +55,7 @@ dependencies {
     implementation 'com.j256.ormlite:ormlite-android:5.0'
     // 添加下面的内容  支付宝支付
     implementation(name: 'alipaySdk-15.7.6-20200521195109', ext: 'aar')
+    implementation(name: 'AMap3DMap_7.5.0_AMapNavi_7.5.0_AMapSearch_7.3.0_AMapTrack_1.3.0_AMapLocation_5.0.0_20200611', ext: 'aar')
+
+    implementation 'com.android.support:multidex:1.0.3'
 }

@@ -92,10 +92,10 @@ public class GoodsFragment extends BaseMvpFragment<GoodsFPresenter> implements G
 
     @Override
     protected void dealOnActivityCreated(Bundle savedInstanceState) {
-        goodsTypeAdapter = new GoodsTypeAdapter(this, mContext);
-        rvGoodsType.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
+        goodsTypeAdapter = new GoodsTypeAdapter(this, context);
+        rvGoodsType.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         rvGoodsType.setAdapter(goodsTypeAdapter);
-        goodsAdapter = new GoodsAdapter(this, mContext);
+        goodsAdapter = new GoodsAdapter(this, context);
         slhlv.setAdapter(goodsAdapter);
         slhlv.setOnScrollListener(new AbsListView.OnScrollListener() {
             @Override

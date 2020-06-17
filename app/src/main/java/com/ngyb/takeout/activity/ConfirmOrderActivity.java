@@ -173,7 +173,7 @@ public class ConfirmOrderActivity extends BaseMvpActivity<ConfirmOrderPresenter>
     }
 
     @Override
-    protected void onResumeNew() {
+    protected void dealOnResume() {
         //查询登录用户的选中送货地址
         ReceiptAddressBean receiptAddressBean = receiptAddressDao.queryUserSelectAddress(MyApplication.userId);
         if (receiptAddressBean != null) {
@@ -195,7 +195,7 @@ public class ConfirmOrderActivity extends BaseMvpActivity<ConfirmOrderPresenter>
             //显示初略地址和详细地址的合并结果
             tvAddress.setText(receiptAddressBean.getDetailAddress() + receiptAddressBean.getDetailAddress());
         }
-        super.onResumeNew();
+        super.dealOnResume();
     }
 
     private int getIndex(String label) {

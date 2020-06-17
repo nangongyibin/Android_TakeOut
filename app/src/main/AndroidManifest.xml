@@ -7,6 +7,21 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
+    <!--   高德地图-->
+<!--    //地图SDK（包含其搜索功能）需要的基础权限-->
+
+    <!--允许程序打开网络套接字-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--允许程序设置内置sd卡的写权限-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--允许程序获取网络状态-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--允许程序访问WiFi网络信息-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--允许程序读写手机状态和身份-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--允许程序访问CellID或WiFi热点来获取粗略的位置-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <dist:module dist:instant="true" />
 
     <application
@@ -29,6 +44,11 @@
         <activity android:name=".activity.AddressListActivity" />
         <activity android:name=".activity.AddAddressActivity" />
         <activity android:name=".activity.PayOnlineActivity" />
+        <activity android:name=".activity.OrderDetailActivity" />
+
+        <meta-data android:name="com.amap.api.v2.apikey" android:value="bb250adb319526de43c6dfeb218e1894">
+<!--            //开发者申请的key-->
+        </meta-data>
     </application>
 
 </manifest>

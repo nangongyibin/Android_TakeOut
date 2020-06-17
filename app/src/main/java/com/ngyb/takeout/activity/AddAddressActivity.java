@@ -314,34 +314,34 @@ public class AddAddressActivity extends BaseMvpActivity<AddAddressPresenter> imp
     private boolean checkData() {
         String name = etName.getText().toString().trim();
         if (TextUtils.isEmpty(name)) {
-            Toast.makeText(mContext, "请填写联系人", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "请填写联系人", Toast.LENGTH_SHORT).show();
             return false;
         }
         String phone = etPhone.getText().toString().trim();
         if (TextUtils.isEmpty(phone)) {
-            Toast.makeText(mContext, "请填写手机号码", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "请填写手机号码", Toast.LENGTH_SHORT).show();
             return false;
         }
         if (!PhoneUtils.isMobile(phone)) {
-            Toast.makeText(mContext, "请填写合法的手机号", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "请填写合法的手机号", Toast.LENGTH_SHORT).show();
             return false;
         }
         String otherPhone = etPhoneOther.getText().toString().trim();
         String receiptAddress = tvReceiptAddress.getText().toString().trim();
         String detailAddress = etDetailAddress.getText().toString().trim();
         if (TextUtils.isEmpty(detailAddress)) {
-            Toast.makeText(mContext, "请填写详细地址", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "请填写详细地址", Toast.LENGTH_SHORT).show();
             return false;
         }
         String tvLabelString = tvLabel.getText().toString().trim();
         if (TextUtils.isEmpty(tvLabelString)) {
-            Toast.makeText(mContext, "请输入标签信息", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "请输入标签信息", Toast.LENGTH_SHORT).show();
             return false;
         }
         int checkId = rgSex.getCheckedRadioButtonId();
         if (checkId != R.id.rb_man && checkId != R.id.rb_women) {
             //2个不相等，则说明没有选中任意一个。
-            Toast.makeText(mContext, "请选择性别", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "请选择性别", Toast.LENGTH_SHORT).show();
             return false;
         }
         return true;

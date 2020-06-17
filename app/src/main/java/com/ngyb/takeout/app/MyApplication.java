@@ -1,6 +1,7 @@
 package com.ngyb.takeout.app;
 
 import android.app.Application;
+import android.support.multidex.MultiDex;
 import android.util.Log;
 
 /**
@@ -24,5 +25,7 @@ public class MyApplication extends Application {
             statusBarHeight = getResources().getDimensionPixelSize(resourceId);
             Log.e(TAG, "onCreate: " + statusBarHeight);
         }
+        // 主要是添加下面这句代码
+        MultiDex.install(this);
     }
 }

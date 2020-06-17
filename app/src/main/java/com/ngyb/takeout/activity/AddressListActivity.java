@@ -105,9 +105,9 @@ public class AddressListActivity extends BaseMvpActivity<AddressListPresenter> i
     }
 
     @Override
-    protected void onResumeNew() {
+    protected void dealOnResume() {
         initClass();
         initData();
-        super.onResumeNew();
+        super.dealOnResume();
     }
 }

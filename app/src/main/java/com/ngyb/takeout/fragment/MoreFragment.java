@@ -51,8 +51,8 @@ public class MoreFragment extends BaseMvpFragment<MoreFPresenter> implements Mor
     }
 
     @Override
-    protected View getLocalView() {
-        TextView textView = new TextView(mContext);
+    protected View getOnCreateView() {
+        TextView textView = new TextView(context);
         //class类的字节码文件(类的名称),BaseFragment子类的名称在textview中展示
         textView.setText(this.getClass().getSimpleName());
         return textView;

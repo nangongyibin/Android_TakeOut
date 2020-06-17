@@ -128,8 +128,8 @@ public class HomeFragment extends BaseMvpFragment<HomeFPresenter> implements Hom
     }
 
     private void initAdapter() {
-        homeAdapter = new HomeAdapter(mContext);
-        rvHome.setLayoutManager(new LinearLayoutManager(mContext, LinearLayoutManager.VERTICAL, false));
+        homeAdapter = new HomeAdapter(context);
+        rvHome.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false));
         rvHome.setAdapter(homeAdapter);
     }
 }

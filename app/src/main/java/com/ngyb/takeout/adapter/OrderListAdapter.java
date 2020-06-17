@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ngyb.takeout.R;
+import com.ngyb.takeout.activity.OrderDetailActivity;
 import com.ngyb.takeout.constant.Constant;
 import com.ngyb.takeout.net.bean.OrderBean;
 import com.ngyb.takeout.observable.OrderObservable;
@@ -163,10 +164,10 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Intent intent = new Intent(itemView.getContext(), OrderDetailActivity.class);
-//                    intent.putExtra(Constant.ORDERID, data.get(position).getId());
-//                    intent.putExtra(Constant.TYPE, data.get(position).getType());
-//                    itemView.getContext().startActivity(intent);
+                    Intent intent = new Intent(itemView.getContext(), OrderDetailActivity.class);
+                    intent.putExtra(Constant.ORDERID, data.get(position).getId());
+                    intent.putExtra(Constant.TYPE, data.get(position).getType());
+                    itemView.getContext().startActivity(intent);
                 }
             });
         }
