@@ -117,7 +117,7 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
     }
 
     private void initClass() {
-        loginPresenter = new LoginPresenter();
+        loginPresenter = new LoginPresenter(context);
         loginPresenter.attachView(this);
     }
 
