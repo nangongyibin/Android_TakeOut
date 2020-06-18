@@ -1,5 +1,13 @@
 apply plugin: 'com.android.application'
+// 添加插件
+apply plugin: 'com.mob.sdk'
 
+// 在MobSDK的扩展中注册SMSSDK的相关信息
+MobSDK {
+    appKey "2f4bfc6f1acfa"
+    appSecret "b14932a88210deb77c7b81f1557734bc"
+    SMSSDK {}
+}
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -28,7 +36,7 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
     //mvp
-    implementation 'com.github.nangongyibin:Android_MVPBase:1.1.0'
+    implementation 'com.github.nangongyibin:Android_MVPBase:1.1.1'
     //AutoDispose解决RxJava内存泄漏
     implementation 'com.uber.autodispose:autodispose:0.7.0'
     implementation 'com.uber.autodispose:autodispose-android:0.7.0'

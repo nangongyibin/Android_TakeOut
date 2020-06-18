@@ -21,4 +21,7 @@ public interface ResponseInfoApi {
 
     @GET("OrderServlet/order")
     Call<ResponseInfoBean> getOrderInfo(@Query("userId") int userId);
+
+    @GET("")
+    Call<ResponseInfoBean> getLoginInfo(@Query("username") String username, @Query("password") String password, @Query("phone") String phone, @Query("type") int type);
 }
