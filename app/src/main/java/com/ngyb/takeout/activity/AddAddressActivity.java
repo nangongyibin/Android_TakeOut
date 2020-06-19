@@ -163,7 +163,6 @@ public class AddAddressActivity extends BaseMvpActivity<AddAddressPresenter> imp
 
     private void initClass() {
         receiptAddressDao = new ReceiptAddressDao(this);
-
     }
 
     private void initData() {
@@ -291,7 +290,7 @@ public class AddAddressActivity extends BaseMvpActivity<AddAddressPresenter> imp
         }
         if (!isUpdate) {
             receiptAddressBean = new ReceiptAddressBean();
-            receiptAddressBean.set_id(MyApplication.userId);
+            receiptAddressBean.setUid(MyApplication.userId);
             receiptAddressBean.setIsSelect(0);
         }
         //将编辑后的内容设置在receiptAddressBean对象中

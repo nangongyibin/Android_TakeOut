@@ -18,7 +18,25 @@ android {
         versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         multiDexEnabled true
+
+        ndk {
+            //选择要添加的对应 cpu 类型的 .so 库。
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "5e2309f9dfb5e3d6928e71ea", //JPush 上注册的包名对应的 Appkey.
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
     }
+
+    packagingOptions {
+        doNotStrip '*/mips/*.so'
+        doNotStrip '*/mips64/*.so'
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -64,6 +82,7 @@ dependencies {
     // 添加下面的内容  支付宝支付
     implementation(name: 'alipaySdk-15.7.6-20200521195109', ext: 'aar')
     implementation(name: 'AMap3DMap_7.5.0_AMapNavi_7.5.0_AMapSearch_7.3.0_AMapTrack_1.3.0_AMapLocation_5.0.0_20200611', ext: 'aar')
-
     implementation 'com.android.support:multidex:1.0.3'
+    implementation 'cn.jiguang.sdk:jpush:3.6.6'  // 此处以JPush 3.6.6 版本为例。
+    implementation 'cn.jiguang.sdk:jcore:2.3.8'  // 此处以JCore 2.3.8 版本为例。
 }

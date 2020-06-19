@@ -6,6 +6,7 @@ import android.os.Message;
 import android.text.TextUtils;
 import android.widget.Toast;
 
+import com.alipay.sdk.app.EnvUtils;
 import com.alipay.sdk.app.PayTask;
 import com.ngyb.mvpbase.BasePresenter;
 import com.ngyb.takeout.activity.PayOnlineActivity;
@@ -28,6 +29,7 @@ public class PayOnlinePresenter extends BasePresenter<PayOnlineContract.View> im
 
     public PayOnlinePresenter(PayOnlineActivity payOnlineActivity) {
         this.payOnlineActivity = payOnlineActivity;
+        EnvUtils.setEnv(EnvUtils.EnvEnum.SANDBOX);
     }
 
 

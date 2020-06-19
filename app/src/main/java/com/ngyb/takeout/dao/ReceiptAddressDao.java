@@ -5,6 +5,7 @@ import android.util.Log;
 
 import com.j256.ormlite.dao.Dao;
 import com.ngyb.takeout.activity.ConfirmOrderActivity;
+import com.ngyb.takeout.app.MyApplication;
 import com.ngyb.takeout.dao.bean.ReceiptAddressBean;
 import com.ngyb.takeout.dao.db.DBHelper;
 import com.ngyb.utils.LogUtils;
@@ -73,7 +74,7 @@ public class ReceiptAddressDao {
         try {
             int i = dao.create(receiptAddressBean);
             LogUtils.doLog(TAG,receiptAddressBean);
-            Log.e(TAG, "create: "+i );
+            Log.e(TAG, "create: "+i +"===="+ MyApplication.userId);
         } catch (SQLException e) {
             Log.e(TAG, "create: "+e.getLocalizedMessage() );
             e.printStackTrace();

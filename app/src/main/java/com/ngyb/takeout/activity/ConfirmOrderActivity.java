@@ -199,6 +199,13 @@ public class ConfirmOrderActivity extends BaseMvpActivity<ConfirmOrderPresenter>
     }
 
     private int getIndex(String label) {
-        return 0;
+        int index = -1;
+        for (int i = 0; i < addressLabels.length; i++) {
+            if (addressLabels[i].equals(label)) {
+                index = i;
+                break;
+            }
+        }
+        return index;
     }
 }

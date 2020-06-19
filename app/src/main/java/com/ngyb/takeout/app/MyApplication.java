@@ -4,6 +4,15 @@ import android.app.Application;
 import android.support.multidex.MultiDex;
 import android.util.Log;
 
+import com.j256.ormlite.dao.Dao;
+import com.ngyb.takeout.dao.bean.UserInfoBean;
+import com.ngyb.takeout.dao.db.DBHelper;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * 作者：南宫燚滨
  * 描述：
@@ -27,5 +36,22 @@ public class MyApplication extends Application {
         }
         // 主要是添加下面这句代码
         MultiDex.install(this);
+        try {
+            //当前手机是否有登录用户,如果有登录用户,则需要将userid重新赋值
+            //找到一个isLogin字段,如果此字段中有为1的情况,则有登录用户
+            DBHelper dbHelper = new DBHelper(this);
+            Dao<UserInfoBean,Integer> dao = dbHelper.getDao(UserInfoBean.class);
+            List<UserInfoBean> userInfoBeans = dao.queryBuilder().where().eq("isLogin", 1).query();
+            if (userInfoBeans!=null && userInfoBeans.size()>0){
+                UserInfoBean userInfoBean = userInfoBeans.get(0);
+                userId = userInfoBean.get_id();
+                Log.e(TAG, "onCreate: "+userId );
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        //极光推送
+        JPushInterface.setDebugMode(true);
+        JPushInterface.init(this);
     }
 }

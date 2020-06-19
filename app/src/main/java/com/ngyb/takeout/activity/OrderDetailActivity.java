@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -39,7 +40,7 @@ import java.util.Observer;
  * 日期：2020/6/16 20:12
  */
 public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> implements OrderDetailContract.View, Observer {
-
+    private static final String TAG = "OrderDetailActivity";
     private ImageView ivOrderDetailBack;
     private TextView tvSellerName;
     private TextView tvOrderDetailTime;
@@ -172,6 +173,7 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
         HashMap<String, String> hashMap = (HashMap<String, String>) arg;
         String orderInfo = hashMap.get(Constant.OrderInfo);
         String type = hashMap.get(Constant.TYPE);
+        Log.e(TAG, "update: " + type);
         //通过type获取新的选中蓝色条目的索引
         getIndex(type);
         changeUI();

@@ -194,7 +194,7 @@ public class LoginActivity extends BaseMvpActivity<LoginPresenter> implements Lo
     private void sendCode() {
         //判断是否有输入电话号码，电话号码合法性
         String phone = etUserPhone.getText().toString().trim();
-        if (TextUtils.isEmpty(phone)) {
+        if (!TextUtils.isEmpty(phone)) {
             //给指定手机号下发短信验证码
             // 请求验证码，其中country表示国家代码，如“86”；phone表示手机号码，如“13800138000”
             SMSSDK.getVerificationCode("86", phone, new OnSendMessageHandler() {
