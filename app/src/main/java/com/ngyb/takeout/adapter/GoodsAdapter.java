@@ -2,6 +2,7 @@ package com.ngyb.takeout.adapter;
 
 import android.content.Context;
 import android.graphics.Paint;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
@@ -107,6 +108,7 @@ public class GoodsAdapter extends BaseAdapter implements StickyListHeadersAdapte
         viewHolder.tvOldPrice.setText(strOldPrice);
         viewHolder.tvOldPrice.getPaint().setFlags(Paint.STRIKE_THRU_TEXT_FLAG);
         //设置图片
+        Log.e(TAG, position+"getView: "+goodsInfoBean.getIcon() );
         Picasso.with(parent.getContext()).load(Constant.BASEURL + goodsInfoBean.getIcon()).into(viewHolder.ivIcon);
         //显示选中商品的数量
         if (goodsInfoBean.getCount() > 0) {

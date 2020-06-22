@@ -98,6 +98,7 @@ public class HomeAdapter extends RecyclerView.Adapter {
             ((SellerViewHolder) viewHolder).send.setText(str);
         }
         if (!TextUtils.isEmpty(seller.getPic())) {
+            Log.e(TAG, i+"setSellerViewHolderData: "+seller.getPic() );
             Picasso
                     .with(context)
                     .load(Constant.BASEURL + seller.getPic())
