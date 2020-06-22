@@ -5,25 +5,18 @@
     package="com.ngyb.takeout">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-
-    <!--   高德地图-->
-    <!--    //地图SDK（包含其搜索功能）需要的基础权限-->
-
-    <!--允许程序打开网络套接字-->
-    <uses-permission android:name="android.permission.INTERNET" />
-    <!--允许程序设置内置sd卡的写权限-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <!--允许程序获取网络状态-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <!--允许程序访问WiFi网络信息-->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <!--允许程序读写手机状态和身份-->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <!--允许程序访问CellID或WiFi热点来获取粗略的位置-->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <dist:module dist:instant="true" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!--声明后台定位权限-->
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
 
     <application
         android:name=".app.MyApplication"
@@ -32,6 +25,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:theme="@style/AppTheme">
         <activity android:name=".activity.MainActivity">
             <intent-filter>
@@ -47,13 +41,14 @@
         <activity android:name=".activity.PayOnlineActivity" />
         <activity android:name=".activity.OrderDetailActivity" />
         <activity android:name=".activity.LoginActivity" />
+        <activity android:name=".jpush.TestActivity" />
 
         <!-- 若您的业务中有使用极光富媒体功能，或者极光早上好功能，需要把此 Activity 的 exported 修改成 true 覆盖 jcenter 上的组件。 -->
         <activity
             android:name="cn.jpush.android.ui.PopWinActivity"
             android:exported="true"
-            tools:node="replace"
-            android:theme="@style/MyDialogStyle">
+            android:theme="@style/MyDialogStyle"
+            tools:node="replace">
             <intent-filter>
                 <category android:name="android.intent.category.DEFAULT" />
                 <action android:name="cn.jpush.android.ui.PopWinActivity" />
@@ -66,10 +61,11 @@
             android:name="cn.jpush.android.ui.PushActivity"
             android:configChanges="orientation|keyboardHidden"
             android:exported="true"
-            tools:node="replace"
-            android:theme="@android:style/Theme.NoTitleBar">
+            android:theme="@android:style/Theme.NoTitleBar"
+            tools:node="replace">
             <intent-filter>
                 <action android:name="cn.jpush.android.ui.PushActivity" />
+
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="${applicationId}" />
             </intent-filter>
@@ -78,7 +74,8 @@
         <!-- Since JCore2.0.0 Required SDK核心功能-->
         <!-- 可配置android:process参数将Service放在其他进程中；android:enabled属性不能是false -->
         <!-- 这个是自定义Service，要继承极光JCommonService，可以在更多手机平台上使得推送通道保持的更稳定 -->
-        <service android:name=".jpush.PushService"
+        <service
+            android:name=".jpush.PushService"
             android:enabled="true"
             android:exported="false"
             android:process=":pushcore">
@@ -94,18 +91,26 @@
         <receiver
             android:name=".jpush.PushMessageReceiver"
             android:enabled="true"
-            android:exported="false" >
+            android:exported="false">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
                 <category android:name="com.ngyb.takeout" />
             </intent-filter>
         </receiver>
 
+        <receiver
+            android:name=".jpush.MyReceiver">
+            <intent-filter>
+                <action android:name="com.ngyb.takeout.MESSAGE_RECEIVED_ACTION"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 定位需要的服务 使用2.0的定位需要加上这个 -->
+        <service android:name="com.amap.api.location.APSService" >
+        </service>
+
         <meta-data
             android:name="com.amap.api.v2.apikey"
-            android:value="bb250adb319526de43c6dfeb218e1894">
-            <!--            //开发者申请的key-->
-        </meta-data>
+            android:value="bb250adb319526de43c6dfeb218e1894" />
     </application>
-
 </manifest>

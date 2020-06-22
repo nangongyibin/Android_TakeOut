@@ -3,17 +3,12 @@ package com.ngyb.takeout.jpush;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 import android.util.Log;
 
-import com.ngyb.takeout.activity.MainActivity;
 import com.ngyb.takeout.constant.Constant;
-import com.ngyb.takeout.observable.OrderObservable;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.util.HashMap;
 
 import cn.jpush.android.api.CmdMessage;
 import cn.jpush.android.api.CustomMessage;
@@ -24,48 +19,17 @@ import cn.jpush.android.service.JPushMessageReceiver;
 
 public class PushMessageReceiver extends JPushMessageReceiver {
     private static final String TAG = "PushMessageReceiver";
-    public static final String KEY_MESSAGE = "message";
-    public static final String KEY_EXTRAS = "extras";
-    public static final String MESSAGE_RECEIVED_ACTION = "com.example.jpushdemo.MESSAGE_RECEIVED_ACTION";
-    public static boolean isForeground = false;
-    private HashMap<String, String> resultMap = new HashMap<>();
 
+    /**
+     * 自定义消息的处理
+     *
+     * @param context
+     * @param customMessage
+     */
     @Override
     public void onMessage(Context context, CustomMessage customMessage) {
         Log.e(TAG, "[onMessage] " + customMessage);
-        String json = customMessage.extra;//自定义消息
-//        Bundle bundle = intent.getExtras();
-//        if (JPushInterface.ACTION_NOTIFICATION_RECEIVED.equals(intent.getAction())) {
-//            //json是从极光推送平台下来的附加字段维护的json串
-//            String json = bundle.getString(JPushInterface.EXTRA_EXTRA);
-//            //在用户收到了通知后,则通过代码更新订单状态,想办法调用observable中notifyobservers方法
-//            //json解析转换成bean对象
-        try {
-            JSONObject jsonObject = new JSONObject(json);
-            if (jsonObject.has(Constant.OrderInfo)) {
-                String orderInfo = jsonObject.getString(Constant.OrderInfo);
-                resultMap.put(Constant.OrderInfo, orderInfo);
-            }
-            if (jsonObject.has(Constant.TYPE)) {
-                String type = jsonObject.getString(Constant.TYPE);
-                resultMap.put(Constant.TYPE, type);
-            }
-            //获取快递小哥所在经纬度坐标,则获取服务器推送下来的lat和lng值
-            if (jsonObject.has(Constant.LAT)) {
-                String lat = jsonObject.getString(Constant.LAT);
-                resultMap.put(Constant.LAT, lat);
-            }
-            if (jsonObject.has(Constant.LNG)) {
-                String lng = jsonObject.getString(Constant.LNG);
-                resultMap.put(Constant.LNG, lng);
-            }
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Log.e(TAG, "onMessage: "+resultMap );
-        OrderObservable.getInstance().changeUI(resultMap);
-//        }
-//        processCustomMessage(context,customMessage);
+        processCustomMessage(context, customMessage);
     }
 
     @Override
@@ -134,47 +98,55 @@ public class PushMessageReceiver extends JPushMessageReceiver {
 
     @Override
     public void onTagOperatorResult(Context context, JPushMessage jPushMessage) {
+        Log.e(TAG, "onTagOperatorResult: ");
         TagAliasOperatorHelper.getInstance().onTagOperatorResult(context, jPushMessage);
         super.onTagOperatorResult(context, jPushMessage);
     }
 
     @Override
     public void onCheckTagOperatorResult(Context context, JPushMessage jPushMessage) {
+        Log.e(TAG, "onCheckTagOperatorResult: ");
         TagAliasOperatorHelper.getInstance().onCheckTagOperatorResult(context, jPushMessage);
         super.onCheckTagOperatorResult(context, jPushMessage);
     }
 
     @Override
     public void onAliasOperatorResult(Context context, JPushMessage jPushMessage) {
+        Log.e(TAG, "onAliasOperatorResult: ");
         TagAliasOperatorHelper.getInstance().onAliasOperatorResult(context, jPushMessage);
         super.onAliasOperatorResult(context, jPushMessage);
     }
 
     @Override
     public void onMobileNumberOperatorResult(Context context, JPushMessage jPushMessage) {
+        Log.e(TAG, "onMobileNumberOperatorResult: ");
         TagAliasOperatorHelper.getInstance().onMobileNumberOperatorResult(context, jPushMessage);
         super.onMobileNumberOperatorResult(context, jPushMessage);
     }
 
     //send msg to MainActivity
     private void processCustomMessage(Context context, CustomMessage customMessage) {
-        if (isForeground) {
+        Log.e(TAG, "processCustomMessage: ");
+        if (Constant.isForeground) {
             String message = customMessage.message;
             String extras = customMessage.extra;
-            Intent msgIntent = new Intent(MESSAGE_RECEIVED_ACTION);
-            msgIntent.putExtra(KEY_MESSAGE, message);
+            Intent msgIntent = new Intent(Constant.MESSAGE_RECEIVED_ACTION);
+            msgIntent.putExtra(Constant.KEY_MESSAGE, message);
             if (!ExampleUtil.isEmpty(extras)) {
                 try {
                     JSONObject extraJson = new JSONObject(extras);
                     if (extraJson.length() > 0) {
-                        msgIntent.putExtra(KEY_EXTRAS, extras);
+                        msgIntent.putExtra(Constant.KEY_EXTRAS, extras);
                     }
                 } catch (JSONException e) {
-
+                    Log.e(TAG, "processCustomMessage: " + e.getLocalizedMessage().toString());
                 }
 
             }
-            LocalBroadcastManager.getInstance(context).sendBroadcast(msgIntent);
+            Log.e(TAG, "processCustomMessage: 1111");
+//            LocalBroadcastManager.getInstance(context).sendBroadcast(msgIntent);
+            context.sendBroadcast(msgIntent);
+            Log.e(TAG, "processCustomMessage: 2222");
         }
     }
 

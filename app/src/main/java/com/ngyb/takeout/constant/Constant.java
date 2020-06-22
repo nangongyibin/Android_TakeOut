@@ -7,8 +7,8 @@ package com.ngyb.takeout.constant;
  * 日期：2020/5/17 16:46
  */
 public class Constant {
-//    public static final String BASEURL = "http://it.nangongyibin.com:8080/TakeOut/";
-    public static final String BASEURL = "http://192.168.43.243:8080/TakeOut/";
+    public static final String BASEURL = "http://it.nangongyibin.com:8080/TakeOut/";
+//    public static final String BASEURL = "http://192.168.43.243:8080/TakeOut/";
 
     public static final String KEY = "seller";
 
@@ -37,4 +37,10 @@ public class Constant {
 
     public static final String LAT = "LAT";
     public static final String LNG = "LNG";
+
+    public static final String MESSAGE_RECEIVED_ACTION = "com.ngyb.takeout.MESSAGE_RECEIVED_ACTION";
+    public static final String KEY_TITLE = "title";
+    public static final String KEY_MESSAGE = "message";
+    public static final String KEY_EXTRAS = "extras";
+    public static boolean isForeground = true;
 }

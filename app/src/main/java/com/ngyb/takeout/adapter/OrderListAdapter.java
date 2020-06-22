@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
 import com.ngyb.takeout.R;
 import com.ngyb.takeout.activity.OrderDetailActivity;
 import com.ngyb.takeout.constant.Constant;
@@ -54,9 +55,10 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        Log.e(TAG, "onBindViewHolder: "+i );
+        Log.e(TAG, "onBindViewHolder: " + i);
         //把viewholder中的控件找出来赋值
         OrderBean orderBean = data.get(i);
+        Log.e(TAG, "onBindViewHolder: "+new Gson().toJson(orderBean));
         //设置商家名称
         if (orderBean.getSellerBean() != null) {
             viewHolder.tvOrderItemSellerName.setText(orderBean.getSellerBean().getName());
@@ -128,7 +130,7 @@ public class OrderListAdapter extends RecyclerView.Adapter<OrderListAdapter.View
         int changePosition = -1;
         for (int i = 0; i < data.size(); i++) {
             OrderBean orderBean = data.get(i);
-            if (orderBean != null && orderBean.getId() != null && orderInfo.equals(orderBean.getId())) {
+            if (orderBean != null && orderBean.getId() != null && orderInfo != null && !orderInfo.equals("") && orderInfo.equals(orderBean.getId())) {
                 String orderId = orderBean.getId();
                 data.get(i).setType(type);
                 changePosition = i;

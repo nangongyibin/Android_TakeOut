@@ -70,6 +70,17 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
         initObservable();
         getIndex(type);
         changeUI();
+        makeMap();
+    }
+
+    private void makeMap() {
+//        try {
+//            map.setVisibility(View.VISIBLE);
+////            initAMap();
+//        } catch (Exception e) {
+//            Log.e(TAG, "makeMap: "+e.getLocalizedMessage().toString() );
+//            e.printStackTrace();
+//        }
     }
 
     /**
@@ -112,13 +123,21 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
      * 注册广播接收者
      */
     private void initObservable() {
+        Log.e(TAG, "initObservable: ");
         OrderObservable.getInstance().addObserver(this);
     }
 
     private void initMap() {
         if (aMap == null) {
             //初始化地图控制器对象
-            aMap = map.getMap();
+            try {
+                Log.e(TAG, "initMap: " );
+//                map.setVisibility(View.VISIBLE);
+                aMap = map.getMap();
+            } catch (Exception e) {
+                Log.e(TAG, "initMap: "+e.getLocalizedMessage().toString() );
+                e.printStackTrace();
+            }
         }
     }
 
@@ -133,16 +152,20 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
         super.dealOnCreate(savedInstanceState);
         //在activity执行onCreate时执行mMapView.onCreate(savedInstanceState)，创建地图
         if (map == null) {
+            Log.e(TAG, "dealOnCreate: " );
             map = findViewById(R.id.map);
         }
-        map.onSaveInstanceState(savedInstanceState);
+        map.onCreate(savedInstanceState);
     }
 
     private void initView() {
         ivOrderDetailBack = findViewById(R.id.iv_order_detail_back);
         tvSellerName = findViewById(R.id.tv_seller_name);
         tvOrderDetailTime = findViewById(R.id.tv_order_detail_time);
-        map = findViewById(R.id.map);
+        if (map == null) {
+            Log.e(TAG, "initView: " );
+            map = findViewById(R.id.map);
+        }
         llOrderDetailTypeContainer = findViewById(R.id.ll_order_detail_type_container);
         llOrderDetailTypePointContainer = findViewById(R.id.ll_order_detail_type_point_container);
     }
@@ -170,8 +193,9 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
 
     @Override
     public void update(Observable o, Object arg) {
+        Log.e(TAG, "update: " + "====" + Thread.currentThread().getId() + "===" + Thread.currentThread().getName());
         HashMap<String, String> hashMap = (HashMap<String, String>) arg;
-        String orderInfo = hashMap.get(Constant.OrderInfo);
+//        String orderInfo = hashMap.get(Constant.OrderInfo);
         String type = hashMap.get(Constant.TYPE);
         Log.e(TAG, "update: " + type);
         //通过type获取新的选中蓝色条目的索引

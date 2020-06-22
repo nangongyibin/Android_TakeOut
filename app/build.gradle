@@ -21,7 +21,7 @@ android {
 
         ndk {
             //选择要添加的对应 cpu 类型的 .so 库。
-            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a'
+            abiFilters 'armeabi', 'armeabi-v7a', 'arm64-v8a' , 'x86', 'x86_64'
             // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
         }
 
@@ -42,6 +42,24 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+
+
+        // Move the tests to tests/java, tests/res, etc...
+//        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+//        debug.setRoot('build-types/debug')
+//        release.setRoot('build-types/release')
     }
 }
 
@@ -81,7 +99,6 @@ dependencies {
     implementation 'com.j256.ormlite:ormlite-android:5.0'
     // 添加下面的内容  支付宝支付
     implementation(name: 'alipaySdk-15.7.6-20200521195109', ext: 'aar')
-    implementation(name: 'AMap3DMap_7.5.0_AMapNavi_7.5.0_AMapSearch_7.3.0_AMapTrack_1.3.0_AMapLocation_5.0.0_20200611', ext: 'aar')
     implementation 'com.android.support:multidex:1.0.3'
     implementation 'cn.jiguang.sdk:jpush:3.6.6'  // 此处以JPush 3.6.6 版本为例。
     implementation 'cn.jiguang.sdk:jcore:2.3.8'  // 此处以JCore 2.3.8 版本为例。

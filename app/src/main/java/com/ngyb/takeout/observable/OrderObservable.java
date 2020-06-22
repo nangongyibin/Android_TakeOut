@@ -1,5 +1,7 @@
 package com.ngyb.takeout.observable;
 
+import android.util.Log;
+
 import java.util.Observable;
 
 /**
@@ -9,6 +11,7 @@ import java.util.Observable;
  * 日期：2020/6/14 21:51
  */
 public class OrderObservable extends Observable {
+    private static final String TAG = "OrderObservable";
     //订单状态 10未支付 20已提交订单 30商家接单 40配送中，等待送达 50已送达 60取消订单
     public static final String ORDERTYPE_UNPAYMENT = "10";
     public static final String ORDERTYPE_SUBMIT = "20";
@@ -39,9 +42,17 @@ public class OrderObservable extends Observable {
     }
 
     public void changeUI(Object obj) {
+//        Log.e(TAG, "changeUI: " + "====" + Thread.currentThread().getId() + "===" + Thread.currentThread().getName());
+        Log.e(TAG, "changeUI: "+obj );
         //让change值由默认的false变成true
-        this.setChanged();
-        //循环遍历Observable集合，然后获取集合中的每一个对象，调用update方法
-        notifyObservers(obj);
+        setChanged();
+        try {
+            //循环遍历Observable集合，然后获取集合中的每一个对象，调用update方法
+//            notifyObservers();
+            notifyObservers(obj);
+        } catch (Exception e) {
+            Log.e(TAG, "changeUI: "+e.getLocalizedMessage().toString() );
+            e.printStackTrace();
+        }
     }
 }
