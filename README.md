@@ -3,7 +3,7 @@
 
 外卖项目胡服务端代码：
 
-    https://gitee.com/nangongyibin/Java_TakeOut.git
+<https://github.com/nangongyibin/Java_TakeOut.git>
 
 
 # 外卖项目 #
