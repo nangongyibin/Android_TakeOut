@@ -35,8 +35,8 @@ public class Constant {
     public static final String TYPE = "type";
     public static final String OrderInfo = "orderInfo";
 
-    public static final String LAT = "LAT";
-    public static final String LNG = "LNG";
+    public static final String LAT = "LAT";//纬度
+    public static final String LNG = "LNG";//经度
 
     public static final String MESSAGE_RECEIVED_ACTION = "com.ngyb.takeout.MESSAGE_RECEIVED_ACTION";
     public static final String KEY_TITLE = "title";

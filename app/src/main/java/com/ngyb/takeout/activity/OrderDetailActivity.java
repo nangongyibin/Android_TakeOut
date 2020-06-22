@@ -70,17 +70,7 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
         initObservable();
         getIndex(type);
         changeUI();
-        makeMap();
-    }
-
-    private void makeMap() {
-//        try {
-//            map.setVisibility(View.VISIBLE);
-////            initAMap();
-//        } catch (Exception e) {
-//            Log.e(TAG, "makeMap: "+e.getLocalizedMessage().toString() );
-//            e.printStackTrace();
-//        }
+//        makeMap();
     }
 
     /**
@@ -132,7 +122,6 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
             //初始化地图控制器对象
             try {
                 Log.e(TAG, "initMap: " );
-//                map.setVisibility(View.VISIBLE);
                 aMap = map.getMap();
             } catch (Exception e) {
                 Log.e(TAG, "initMap: "+e.getLocalizedMessage().toString() );
@@ -262,11 +251,12 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
         riderMarker.showInfoWindow();
         //参数1 当前所在的位置
         //参数二 历史的点，前一个点
-        changeRider(currentPos, riderPosList.get(riderPosList.size() - 1));
+        changeRider(currentPos, riderPosList.get(riderPosList.size() - 2));
     }
 
     private void changeRider(LatLng currentPos, LatLng pos) {
         //绘制线绿色，宽度为2像素
+        Log.e(TAG, "changeRider: "+currentPos.toString()+"==="+pos.toString() );
         aMap.addPolyline(new PolylineOptions().add(pos, currentPos).width(2).color(Color.GREEN));
     }
 
@@ -303,7 +293,9 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
         aMap.moveCamera(CameraUpdateFactory.zoomTo(13));
         //显示买卖双方，在地图上展示经纬度坐标
         //添加买家master
-        latLngBuyter = new LatLng(40.100519, 116.365828);
+//        116.339317,40.083549
+        //龙腾苑三区的位置
+        latLngBuyter = new LatLng(40.07767738,116.3295722 );
         //给买家在地图上显示的时候提供一张图片
         MarkerOptions markerOptions = new MarkerOptions();
         Marker marker = aMap.addMarker(markerOptions.position(latLngBuyter));
@@ -313,8 +305,8 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
         marker.setIcon(descriptor);
         //将地图的中心指向某一个经纬坐标点，指定地图的中心点为买家
         aMap.moveCamera(CameraUpdateFactory.changeLatLng(latLngBuyter));
-        //添加卖家marker
-        latLngSeller = new LatLng(40.060244, 116.343513);
+        //添加卖家marker    116.363737,40.115753 风雅园三区
+        latLngSeller =new LatLng(40.07923715, 116.32521629);
         //创建一个在地图上需要现实的点的对象
         Marker marker1 = aMap.addMarker(new MarkerOptions().position(latLngSeller));
         //给要显示的点准备图片
@@ -350,5 +342,29 @@ public class OrderDetailActivity extends BaseMvpActivity<OrderDetailPresenter> i
         super.dealOnSaveInstanceState(savedInstanceState);
         //在activity执行onSaveInstanceState时执行mapview.onSaveInstanceState(savedInstanceState)，保存地图当前的状态
         map.onSaveInstanceState(savedInstanceState);
+    }
+
+    /**
+     * 测试走推送的流程
+     */
+    private void makeMap() {
+        try {
+            initAMap();
+            HashMap<String, String> hashMap = new HashMap<>();
+            hashMap.put(Constant.LAT,"40.07725049");
+            hashMap.put(Constant.LNG,"116.3244009");
+            initRider(hashMap);//骑手
+//            40.07923715, 116.32521629
+            hashMap.put(Constant.LAT,"40.07923715");
+            hashMap.put(Constant.LNG,"116.32521629");
+            changeRider(hashMap,OrderObservable.ORDERTYPE_DISTRIBUTION_RIDER_TANK_MEAL);
+//40.07767738,116.3295722
+            hashMap.put(Constant.LAT,"40.07767738");
+            hashMap.put(Constant.LNG,"116.3295722");
+            changeRider(hashMap,OrderObservable.ORDERTYPE_DISTRIBUTION_RIDER_GIVE_MEAL);
+        } catch (Exception e) {
+            Log.e(TAG, "makeMap: "+e.getLocalizedMessage().toString() );
+            e.printStackTrace();
+        }
     }
 }

@@ -98,7 +98,7 @@
             <!--地图控件 TODO -->
             <com.amap.api.maps.MapView
                 android:id="@+id/map"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/dp_200" />
 
